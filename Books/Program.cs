@@ -13,7 +13,7 @@ namespace Books
 		{
 			var builder = WebApplication.CreateBuilder(args);
 
-			builder.Services.AddControllers();
+			builder.Services.AddControllers().AddXmlSerializerFormatters();
 
 			builder.Services.AddScoped<IBookService, BookService>();
 			builder.Services.AddScoped<IRepository<Book, Guid>, Repository<Book, Guid>>();
